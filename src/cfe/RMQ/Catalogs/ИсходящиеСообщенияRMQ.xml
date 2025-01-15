@@ -59,7 +59,7 @@
 			<SearchStringModeOnInputByString>Begin</SearchStringModeOnInputByString>
 			<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>
 			<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>
-			<DefaultObjectForm/>
+			<DefaultObjectForm>Catalog.ИсходящиеСообщенияRMQ.Form.ФормаЭлемента</DefaultObjectForm>
 			<DefaultFolderForm/>
 			<DefaultListForm/>
 			<DefaultChoiceForm/>
@@ -132,11 +132,11 @@
 			</Attribute>
 			<Attribute uuid="708076b5-6e80-45a5-89ba-b3b7e0ccc0f4">
 				<Properties>
-					<Name>ТестСообщения</Name>
+					<Name>ТекстСообщения</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Тест сообщения</v8:content>
+							<v8:content>Текст сообщения</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -214,6 +214,7 @@
 					<DataHistory>Use</DataHistory>
 				</Properties>
 			</Attribute>
+			<Form>ФормаЭлемента</Form>
 		</ChildObjects>
 	</Catalog>
 </MetaDataObject>

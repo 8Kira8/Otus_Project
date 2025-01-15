@@ -71,6 +71,7 @@
 			<CommonModule>RMQСервер</CommonModule>
 			<EventSubscription>ПриЗаписиЭлемента</EventSubscription>
 			<ScheduledJob>ОтправитьСообщениеRMQ</ScheduledJob>
+			<ScheduledJob>ПолучитьСообщениеRMQ</ScheduledJob>
 			<Constant>Адрес</Constant>
 			<Constant>Порт</Constant>
 			<Constant>Логин</Constant>
@@ -82,6 +83,12 @@
 			<Catalog>ОтусКонтрагентыОтправка</Catalog>
 			<Catalog>ИсходящиеСообщенияRMQ</Catalog>
 			<Catalog>ОтусКонтрагентыПолучение</Catalog>
+			<Catalog>ВходящиеСообщенияRMQ</Catalog>
+			<Catalog>_ДемоПартнеры</Catalog>
+			<Catalog>БанковскиеСчета</Catalog>
+			<Catalog>ВидыКонтактнойИнформации</Catalog>
+			<Enum>ЮрФизЛицо</Enum>
+			<Enum>ТипыКонтактнойИнформации</Enum>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
