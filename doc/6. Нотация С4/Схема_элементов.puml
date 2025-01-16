@@ -1,0 +1,30 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Система электронного документооборота - Уровень элементов
+
+Person(user, "Пользователь", "Пользователь системы 1С")
+Person(user1, "Бухгалтер", "Пользователь системы 1С")
+
+System(RMQ, "RMQ", "Средство обмена между базами.")
+System(EDO, "База 1С ЭДО", "База для электронного документооборота.")
+System(Takskom, "Такском", "Прием и отправка ЭДО")
+
+System_Ext(Contracts, "Справочник Договоры", "1С ДО")
+System_Ext(Contragents, "Справочник Контрагенты", "1С ДО")
+System_Ext(Organizations, "Справочник Организации", "1С УХ")
+System_Ext(Documents, "УКД УПД", "1С БП, 1С ЕРП, 1С УПП")
+
+Rel(user, EDO, "Использует")
+Rel(user1, Documents, "Использует")
+
+EDO <--> RMQ : "Передача данных"
+RMQ <--> Documents : "Передача данных"
+EDO <--> Takskom : "Передача данных"
+Rel(Contracts, RMQ, "Обновление данных")
+Rel(Contragents, RMQ, "Обновление данных")
+Rel(Organizations, RMQ, "Обновление данных")
+
+@enduml

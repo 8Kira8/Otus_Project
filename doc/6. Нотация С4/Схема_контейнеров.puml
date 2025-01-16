@@ -1,0 +1,30 @@
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Система электронного документооборота
+
+Person(user, "Пользователь", "Пользователь системы 1С")
+Person(user1, "Бухгалтер", "Пользователь системы 1С")
+
+System(Takskom, "Такском", "Прием и отправка ЭДО")
+System(BP, "База 1С БП", "База для учета хозяйственной деятельности. (MSSQL)")
+System(EDO, "База 1С ЭДО", "База для электронного документооборота. (MSSQL)")
+System(DO, "База 1С ДО", "База для согласование документов. (MSSQL)")
+System(UH, "База 1С УХ", "MDM (MSSQL)")
+System(ERP, "База 1С ЕРП", "База для учета хозяйственной деятельности. (MSSQL)")
+System(UPP, "База 1С УПП", "База для учета хозяйственной деятельности. (MSSQL)")
+System(RMQ, "RMQ", "Средство обмена между базами.")
+
+Rel(user, EDO, "Использует")
+Rel(user1, BP, "Использует")
+
+EDO <--> Takskom
+BP <--> RMQ : "AMQP"
+EDO <--> RMQ : "AMQP"
+DO <--> RMQ : "AMQP"
+UH <--> RMQ : "AMQP"
+ERP <--> RMQ : "AMQP"
+UPP <--> RMQ : "AMQP"
+
+@enduml
